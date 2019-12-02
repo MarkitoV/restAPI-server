@@ -44,7 +44,7 @@
 
     despues, podemos agregar el siguiente script a el package.json
 
-    "dev": "concurrently \"tsc -w\" \"node dist/index.js\""
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
 
 5.- instalamos el modulo de express
 
