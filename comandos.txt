@@ -1,0 +1,100 @@
+1.- creamos el proyecto de node
+
+    npm init -y
+
+2.- instalamos el interprete de typescript
+
+    npm i typescript
+
+3.- creamos el archivo de configuración de typescript
+
+    npx tsc --init
+
+    en el archivo tsconfig.json, descomentamos y/o modificamos las siguientes lineas
+
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+
+    ademas, agregamos las siguientes lineas debajo de "compilerOptions": {...}
+
+    {
+      "compilerOptions": {
+        ...
+      },
+      "include": ["src"],
+      "include": ["node_modules"],
+      "files": ["types.d.ts"]
+    }
+
+    para generar el codigo de javascript en la carpeta ./dist
+
+    npx tsc
+
+4.- instalamos el módulo concurrently para que nuestros scripts puedan correr varios
+        comandos a la vez
+
+    npm i concurrently -D
+
+    instalamos el modulo de nodemon para que el servidor se reinicie solo
+
+    npm i nodemon -D
+
+    despues, podemos agregar el siguiente script a el package.json
+
+    "dev": "concurrently \"tsc -w\" \"node dist/index.js\""
+
+5.- instalamos el modulo de express
+
+    npm i express
+
+    instalamos los tipos de datos para express
+
+    npm i @types/express -D
+
+6.- instalamos el módulo morgan para poder ver las peticiones que van llegando al
+    servidor
+
+    npm i morgan
+
+    instalamos los tipos de datos para morgan
+
+    npm i @types/morgan -D
+
+7.- instalamos el módulo mongoose para conectarnos a la base de datos
+
+    npm i mongoose
+
+    instalamos los tipos de datos para mongoose
+
+    npm i @types/mongoose -D
+
+8.- instalamos el módulo para la creación de tokens
+
+    npm i jsonwebtoken
+
+    instalamos los tipos de datos para jsonwebtoken
+
+    npm i @types/jsonwebtoken -D
+
+9.- instalamos un módulo para manejar variables de entorno
+
+    npm i dotenv
+
+    instalamos los tipos de datos para dotenv
+
+    npm i @types/dotenv -D
+
+    48:55
+
+10.- instalamos el módulo bcryptjs para cifrar nuestras contraseñas
+
+    npm i bcryptjs
+
+    instalamos los tipos de datos para bcryptjs
+
+    npm i @types/bcryptjs -D
+
+    58:30
