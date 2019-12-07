@@ -17,6 +17,7 @@ const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userSchema = new mongoose_1.Schema({
     username: {
         type: String,
+        unique: true,
         required: true,
         min: 4,
         lowercase: true
@@ -31,7 +32,7 @@ const userSchema = new mongoose_1.Schema({
         type: String,
         required: true
     }
-});
+}, { timestamps: true });
 userSchema.methods.encryptPassword = (password) => __awaiter(void 0, void 0, void 0, function* () {
     const salt = yield bcryptjs_1.default.genSalt(10);
     return bcryptjs_1.default.hash(password, salt);

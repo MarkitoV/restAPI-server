@@ -27,7 +27,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   }
-});
+}, {timestamps: true});
 
 userSchema.methods.encryptPassword = async (password: string): Promise<string> => {
   const salt = await bcrypt.genSalt(10);
