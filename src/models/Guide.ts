@@ -2,7 +2,7 @@ import { Schema, model, Document } from 'mongoose';
 
 export interface IGuide extends Document {
   subject: string;
-  number: number;
+  numberLab: number;
   semester: string;
   docent: string;
 }
@@ -23,6 +23,6 @@ const guideSchema = new Schema({
     type: String,
     required: true
   }
-});
+}, { timestamps: true });
 
 export default model<IGuide>('Guide', guideSchema);

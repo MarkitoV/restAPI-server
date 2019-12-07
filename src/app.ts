@@ -1,6 +1,8 @@
 import express, { Application } from 'express';
-import authRoutes from './routes/auth';
 import morgan from 'morgan';
+
+import authRoutes from './routes/auth';
+import guideRoutes from './routes/guide';
 
 const app: Application = express();
 
@@ -13,5 +15,6 @@ app.use(express.json());
 
 // routes
 app.use('/api/auth', authRoutes);
+app.use('/api/guide', guideRoutes);
 
 export default app;

@@ -7,7 +7,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 mongoose_1.default.connect('mongodb://localhost/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 })
     .then(db => console.log('Database is connected'))
     .catch(err => console.log(err));

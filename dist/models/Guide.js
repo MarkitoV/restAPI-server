@@ -17,6 +17,6 @@ const guideSchema = new mongoose_1.Schema({
         type: String,
         required: true
     }
-});
+}, { timestamps: true });
 exports.default = mongoose_1.model('Guide', guideSchema);
 //# sourceMappingURL=Guide.js.map
