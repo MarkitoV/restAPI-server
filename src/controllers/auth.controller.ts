@@ -19,7 +19,6 @@ export const signup = async (req: Request, res: Response) => {
 };
 
 export const signin = async (req: Request, res: Response) => {
-
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return res.status(400).json('Email or Password are wrong');
